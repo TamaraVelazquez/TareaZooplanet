@@ -1,0 +1,34 @@
+﻿@model TareaZooplanet.Areas.Admin.Models.IndexAdminEspeciesViewModel;
+@{
+    Layout = "AdminLayout";
+}
+<article class="admin-card">
+    <h2 class="admin-title">Gestión de Especies</h2>
+
+    <table class="species-table">
+        <thead>
+            <tr>
+                <th>Especie</th>
+                <th>Clase</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var e in Model.Especies)
+            {
+                <tr>
+                    <td>@e.Especie</td>
+                    <td>@e.NombreEspecies</td>
+                    <td class="actions-cell">
+                        <a href="~/Admin/Home/Editar/@e.Id" class="action-btn btn-primary">Editar</a>
+                        <a href="~/Admin/Home/Eliminar/@e.Id" class="action-btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <section class="btn-group">
+        <a href="~/Admin/Home/Agregar" class="btn btn-success">Agregar Nueva Especie</a>
+    </section>
+</article>

@@ -1,0 +1,35 @@
+﻿@model TareaZooplanet.Models.ViewModels.IndexViewModel;
+@{
+    Layout = "Layout";
+}
+
+<section class="hero">
+    <div class="hero-slide active">
+        <img src="https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Animales salvajes">
+        <div class="hero-content">
+            <h1>Descubre el Mundo Animal</h1>
+            <p>Explora la increíble diversidad de especies que habitan nuestro planeta</p>
+        </div>
+    </div>
+</section>
+
+<h2 class="section-title">Clasificación de los Vertebrados</h2>
+
+<section class="categories">
+
+    @foreach(var c in Model.Clases)
+    {
+        <article class="category-card">
+            <a href="~/Home/Clase/@c.Nombre">
+                <figure class="category-image">
+                    <img src="~/clases/@(c.Id).jpg" alt="@c.Nombre">
+                </figure>
+                <div class="category-content">
+                    <h2>@c.Nombre</h2>
+                    <p>@c.Descripcion</p>
+                </div>
+            </a>
+        </article>
+    }
+
+</section>

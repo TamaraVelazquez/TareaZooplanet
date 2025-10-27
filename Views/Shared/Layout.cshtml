@@ -1,0 +1,40 @@
+﻿@inject TareaZooplanet.Services.ClasesServices clasesServices
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZooPlanet - Aves</title>
+    <link href="~/StyleSheet.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="logo"><a href="~/Home/Index"><b>Zoo</b>Planet</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li>
+                        <a href="#">Clasificación</a>
+                        <ul>
+                            @foreach (var c in clasesServices.GetClases())
+                            {
+                                <li><a href="~/Home/Clase/@c">@c</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="~/Admin/Home/Index">Administrador</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>Programación Web. Unidad 3.</p>
+    </footer>
+</body>
+</html>

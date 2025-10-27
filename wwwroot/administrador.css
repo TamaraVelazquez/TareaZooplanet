@@ -1,0 +1,274 @@
+﻿:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #4caf50;
+    --accent-color: #81c784;
+    --light-color: #e8f5e9;
+    --dark-color: #1b5e20;
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    min-height: 100vh;
+}
+
+.admin-header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+}
+
+.admin-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+    .admin-logo a {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    .admin-logo b {
+        color: var(--primary-color);
+    }
+
+.admin-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+    .admin-menu a {
+        color: var(--primary-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: var(--transition);
+        font-weight: 600;
+    }
+
+        .admin-menu a:hover,
+        .admin-menu a.active {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+.admin-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.admin-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.admin-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Formularios */
+.admin-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea,
+.form-file {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--light-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus,
+    .form-file:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-file {
+    padding: 0.5rem 1rem;
+}
+
+/* Botones */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-danger {
+    background-color: #d32f2f;
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Tabla de especies */
+.species-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+    .species-table th {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .species-table td {
+        padding: 1rem;
+        border-bottom: 1px solid var(--light-color);
+    }
+
+    .species-table tr:hover {
+        background-color: var(--light-color);
+    }
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+/* Mensajes */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.message-success {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+}
+
+.message-error {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .admin-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .species-table {
+        font-size: 0.9rem;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+    }
+}

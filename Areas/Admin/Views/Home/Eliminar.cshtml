@@ -1,0 +1,22 @@
+﻿@model TareaZooplanet.Areas.Admin.Models.EliminarAdminEspecieViewModel;
+@{
+    Layout = "AdminLayout";
+}
+<article class="admin-card">
+    <h2 class="admin-title">Eliminar Especie</h2>
+
+    <form method="post" action="~/Admin/Home/Eliminar">
+        <section style="text-align: center; margin: 2rem 0;">
+            <h3 style="color: #d32f2f; margin-bottom: 1rem;">¿Estás seguro de eliminar esta especie?</h3>
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>@Model.Especie</strong></p>
+            <p style="color: var(--text-color); margin-bottom: 2rem;">Clase: @Model.NombreEspecies</p>
+
+        </section>
+        @Html.ValidationSummary()
+        <section class="btn-group">
+            <button class="btn btn-danger">Confirmar Eliminación</button>
+            <a href="~/Admin/Home/Index" class="btn btn-secondary">Cancelar</a>
+        </section>
+    </form>
+</article>

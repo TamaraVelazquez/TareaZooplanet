@@ -1,0 +1,43 @@
+﻿@model TareaZooplanet.Models.ViewModels.EspecieViewModel;
+@{
+    Layout = "Layout";
+}
+
+<section class="species-detail-container">
+    <section class="species-info">
+        <h1 class="species-title">@Model.Especie</h1>
+        <span class="species-class">@Model.NombreClase</span>
+
+        <table class="data-table">
+            <tr>
+                <td>Habitat:</td>
+                <td>@Model.Habitat</td>
+            </tr>
+            <tr>
+                <td>Peso:</td>
+                <td>@($"{@Model.Peso} kg")</td>
+            </tr>
+            <tr>
+                <td>Tamaño:</td>
+                <td>@($"{@Model.Tamaño} cm")</td>
+            </tr>
+        </table>
+
+        <article class="observations-section">
+            <h3>Observaciones</h3>
+            <div class="observations-content">
+                <p>@Model.Observaciones</p>
+            </div>
+        </article>
+
+        <div class="navigation-buttons">
+            <a href="~/Home/Clase/@Model.NombreClase" class="nav-btn btn-back">← Volver a Especies</a>
+        </div>
+    </section>
+
+    <aside class="species-image-container">
+        <img src="~/especies/@(Model.Id).jpg"
+             alt="@Model.Especie"
+             class="species-image">
+    </aside>
+</section>

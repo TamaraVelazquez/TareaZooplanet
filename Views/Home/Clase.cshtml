@@ -1,0 +1,35 @@
+﻿@model TareaZooplanet.Models.ViewModels.ClaseViewModel;
+@{
+    Layout = "Layout";
+}
+
+<a href="~/Home/Index" class="btn btn-back">Volver al Inicio</a>
+<h2 class="section-title">Especies de @Model.NombreClase</h2>
+
+<section class="species-table">
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Especie</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var e in Model.Especies)
+            {
+                <tr>
+                    <td>
+                        <img src="~/especies/@(e.Id).jpg" alt="@e.Especie">
+                    </td>
+                    <td>
+                        <strong>@e.Especie</strong>
+                    </td>
+                    <td>
+                        <a href="~/Home/Detalle/@e.Id" class="species-link">Ver detalles →</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
