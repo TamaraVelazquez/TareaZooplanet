@@ -48,12 +48,7 @@ namespace TareaZooplanet.Controllers
             {
                 return RedirectToAction("Index");
             }
-            //if (id == null)
-            //{
-            //    return RedirectToAction("Index");
-            //}
-            //var vm = especiesServices.GetEspecie(id);
-            //return View(vm);
+
         }
     }
 }

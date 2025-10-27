@@ -16,7 +16,7 @@ namespace TareaZooplanet.Services
             ClasesRepository = clasesRepository;
             HostEnvironment = hostEnvironment;
         }
-
+        
         public Repository<Especies> EspeciesRepository { get; }
         public Repository<Clase> ClasesRepository { get; }
         public IWebHostEnvironment HostEnvironment { get; }
@@ -81,12 +81,6 @@ namespace TareaZooplanet.Services
             }
 
             return vm;
-            //return new EliminarAdminEspecieViewModel
-            //{
-            //    Id = e.Id,
-            //    Especie = e.Especie,
-            //    NombreEspecies = e.IdClaseNavigation.Nombre ?? "Sin clase"
-            //};
         }
 
         public void Eliminar(int id)
@@ -153,12 +147,12 @@ namespace TareaZooplanet.Services
 
         public void AgregarImagen(IFormFile archivo, int idEspecie)
         {
-            if (archivo.Length > 1024 * 1024 * 2)//2MB
+            if (archivo.Length > 1024 * 1024 * 2)
             {
                 throw new ArgumentException("Seleccione una imagen de 2MB o menos.");
             }
 
-            if (archivo.ContentType != "image/jpeg") //MIME TYPE
+            if (archivo.ContentType != "image/jpeg")
             {
                 throw new ArgumentException("Selecciones una imagen JPEG o JPG");
             }

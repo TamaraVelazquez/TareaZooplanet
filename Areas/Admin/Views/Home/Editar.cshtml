@@ -21,7 +21,6 @@
             <select id="clase" class="form-select" name="IdClase" required>
                 @foreach (var c in Model.Clases)
                 {
-                    @* <option value="@c.Id" @(c.Id == Model.Id ? "selected" : "")>@c.Nombre</option> *@
                     <option value="@c.Id" @(c.Id == Model.IdClase ? "selected" : "")>@c.Nombre</option>
                 }
             </select>
